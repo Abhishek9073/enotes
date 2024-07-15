@@ -24,7 +24,7 @@ function App() {
 
   const fetchFiles = async () => {
     try {
-      const response = await axios.get('https://enotes-server.vercel.app/files');
+      const response = await axios.get('https://enotes-backend.vercel.app/files');
       setFiles(response.data);
     } catch (error) {
       console.error('Error fetching files:', error);
@@ -43,7 +43,7 @@ function App() {
     // formData.append('description', description);
 
     try {
-      await axios.post('https://enotes-server.vercel.app/upload', formData, {
+      await axios.post('https://enotes-backend.vercel.app/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -67,7 +67,7 @@ function App() {
     const updatedDescription = prompt("Enter new description:");
 
     try {
-      await axios.put(`https://enotes-server.vercel.app/update/${id}`, {
+      await axios.put(`https://enotes-backend.vercel.app/update/${id}`, {
         title: updatedTitle,
         description: updatedDescription
       });
@@ -81,7 +81,7 @@ function App() {
 
   const handleDelete = async (id) => {
     try {
-       await axios.delete(`https://enotes-server.vercel.app/delete/${id}`);
+       await axios.delete(`https://enotes-backend.vercel.app/delete/${id}`);
      
      setMessage(<h5 style={{color:'#dc3545'}}> File deleted successfully</h5>);
 
