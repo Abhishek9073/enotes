@@ -24,7 +24,7 @@ function App() {
 
   const fetchFiles = async () => {
     try {
-      const response = await axios.get('http://localhost:5002/files');
+      const response = await axios.get('https://enotes-sigma.vercel.app/files');
       setFiles(response.data);
     } catch (error) {
       console.error('Error fetching files:', error);
@@ -43,7 +43,7 @@ function App() {
     // formData.append('description', description);
 
     try {
-      await axios.post('http://localhost:5002/upload', formData, {
+      await axios.post('https://enotes-sigma.vercel.app/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -67,7 +67,7 @@ function App() {
     const updatedDescription = prompt("Enter new description:");
 
     try {
-      await axios.put(`http://localhost:5002/update/${id}`, {
+      await axios.put(`https://enotes-sigma.vercel.app/update/${id}`, {
         title: updatedTitle,
         description: updatedDescription
       });
@@ -81,7 +81,7 @@ function App() {
 
   const handleDelete = async (id) => {
     try {
-       await axios.delete(`http://localhost:5002/delete/${id}`);
+       await axios.delete(`https://enotes-sigma.vercel.app/delete/${id}`);
      
      setMessage(<h5 style={{color:'#dc3545'}}> File deleted successfully</h5>);
 

@@ -11,7 +11,15 @@ const port = process.env.PORT || 5003;
 
 // Middleware
 app.use(express.json());
-app.use(cors());
+app.use(cors(
+{
+  origin:["https://enotes-sigma.vercel.app/"],
+  methods:["GET","POST","PUT","DELETE"],
+  credentials:true
+}
+
+
+));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Define uploads directory
