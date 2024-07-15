@@ -22,7 +22,7 @@ app.use((req, res, next) => {
 app.use(express.json());
 app.use(cors(
 {
-  origin:["https://enotes-mern.vercel.app/"],
+  origin:["https://enotes-mern.vercel.app"],
   methods:["GET","POST","PUT","DELETE"],
   credentials:true
 }
