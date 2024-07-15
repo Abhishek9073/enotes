@@ -13,7 +13,7 @@ const port = process.env.PORT || 5003;
 app.use(express.json());
 app.use(cors(
 {
-  origin:["https://enotes-final.vercel.app"],
+  origin:["https://enotes-final.vercel.app/"],
   methods:["GET","POST","PUT","DELETE"],
   credentials:true
 }
