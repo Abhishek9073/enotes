@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const cors = require('cors');
+// const cors = require('cors');
 const multer = require('multer');
 const path = require('path');
 require('dotenv').config();
@@ -10,15 +10,15 @@ const app = express();
 const port = process.env.PORT || 5003;
 
 // Middleware to set CORS headers
-const corsOptions = {
-  origin: 'https://enotes-mern.netlify.app', // Your frontend URL without trailing slash
-  methods: 'GET, POST, PUT, DELETE',
-  allowedHeaders: 'Content-Type, Authorization',
-  credentials: true,
-  optionsSuccessStatus: 200 // For legacy browser support
-};
+// const corsOptions = {
+//   origin: 'https://enotes-mern.netlify.app', // Your frontend URL without trailing slash
+//   methods: 'GET, POST, PUT, DELETE',
+//   allowedHeaders: 'Content-Type, Authorization',
+//   credentials: true,
+//   optionsSuccessStatus: 200 // For legacy browser support
+// };
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
