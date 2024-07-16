@@ -19,6 +19,12 @@ app.use((req, res, next) => {
 });
 
 // Middleware
+const corsOptions = {
+  origin: 'https://enotes-mern.netlify.app',
+  optionsSuccessStatus: 200 // For legacy browser support
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(cors(
 {
